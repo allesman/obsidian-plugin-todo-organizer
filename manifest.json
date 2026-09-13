@@ -1,10 +1,10 @@
 {
-	"id": "clear-todos",
-	"name": "Clear Todos",
-	"version": "1.0.3",
+	"id": "merlins-obsidian-plugin",
+	"name": "Merlin's Move Todos",
+	"version": "0.0.1",
 	"minAppVersion": "0.15.0",
-	"description": "Quickly remove all completed todos from your notes or selected text.",
-	"author": "Joshua Gawenda",
-	"authorUrl": "https://github.com/gutentag2012",
+	"description": "Fork of clear-todos, instead of clearing it moves todos to the bottom.",
+	"author": "Merlin",
+	"authorUrl": "https://github.com/allesman",
 	"isDesktopOnly": false
 }

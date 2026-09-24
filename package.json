@@ -1,7 +1,7 @@
 {
 	"name": "move-todos",
 	"version": "0.0.1",
-	"description": "Fork of clear-todos, instead of clearing it moves todos to the bottom.",
+	"description": "Fork of clear-todos by Joshua Gawenda, instead of clearing it can also move todos to the bottom.",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",

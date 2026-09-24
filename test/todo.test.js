@@ -29,3 +29,9 @@ test("a scrapped TODO should be placed below completed TODO, below the rest", ()
 		"some other things\n- [x] completed\n- [-] scrapped",
 	);
 })
+
+test("two non TODO texts should be separated by a line break after TODOs between them have been extracted", () => {
+	expect(moveTodoDown("some things\n- [x] completed\nsome other things")).toBe(
+		"some things\nsome other things\n- [x] completed",
+	);
+})

@@ -1,9 +1,9 @@
 {
-	"id": "merlins-obsidian-plugin",
-	"name": "Merlin's Move Todos",
+	"id": "move-todos",
+	"name": "Move Todos",
 	"version": "0.0.1",
 	"minAppVersion": "0.15.0",
-	"description": "Fork of clear-todos, instead of clearing it moves todos to the bottom.",
+	"description": "Fork of clear-todos by Joshua Gawenda, instead of clearing it can also move todos to the bottom.",
 	"author": "Merlin",
 	"authorUrl": "https://github.com/allesman",
 	"isDesktopOnly": false

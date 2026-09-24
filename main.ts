@@ -9,7 +9,6 @@ import {
 import { moveTodoDown } from "lib";
 import { clearTodo } from "lib";
 
-
 const TODO_TEXTS = {
 	clearSelection: "Clear todos in selection or current file",
 	clearFile: "Clear todos in file",
@@ -25,17 +24,21 @@ enum ModificationAction {
 }
 
 export default class ClearTodosPlugin extends Plugin {
-	private editorMenuEvent: EventRef;
-	private fileMenuEvent: EventRef;
-
 	private actionHandlers: Record<ModificationAction, (s: string) => string> =
 		{
 			[ModificationAction.Clear]: clearTodo,
 			[ModificationAction.Move]: moveTodoDown,
 		};
 
+	// Obsidian Boilerplate
+	// maps our clearTodo and moveTodoDown functions to various spots in obsidian where we might want them
+	// TODO clean up the selection file shenanigans
+
+	private editorMenuEvent: EventRef;
+	private fileMenuEvent: EventRef;
+
 	async onload() {
-		// Commands (mappable to hotkey)
+		// Commands (the things mappable to hotkeys)
 		this.addCommand({
 			id: CLEAR_COMMAND_ID,
 			name: TODO_TEXTS.clearSelection,
@@ -146,6 +149,7 @@ export default class ClearTodosPlugin extends Plugin {
 				this.actionHandlers[action](selection),
 			);
 		}
+		// if there is no selection, we apply the action to the full file (view)
 		return view.setViewData(this.actionHandlers[action](view.data), false);
 	}
 }

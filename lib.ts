@@ -1,4 +1,4 @@
-// the initially provided regex (modified to also hit - and not just x)
+// the initially provided regex (modified to also hit [-] and not just [x])
 // start of file or line break at beginning is also encapsulated
 // end of file or line break at end is only required, not encapsulated
 const ALL_CLOSED_TODO_REGEX = /(^|\n)\t*- \[(x|-)\].*?(?=\n|$)/g;

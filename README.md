@@ -1,4 +1,4 @@
-# Clear Todos
+# Todo Organizer
 
 > Quickly remove or move all completed todos from your notes or selected text.
 

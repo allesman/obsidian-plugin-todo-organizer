@@ -1,6 +1,6 @@
 # Clear Todos
 
-> Quickly remove all completed todos from your notes or selected text.
+> Quickly remove or move all completed todos from your notes or selected text.
 
 Adds 2 commands to perform on the current selection or the entire document if there is no selection:
 

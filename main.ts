@@ -32,7 +32,6 @@ export default class ClearTodosPlugin extends Plugin {
 
 	// Obsidian Boilerplate
 	// maps our clearTodo and moveTodoDown functions to various spots in obsidian where we might want them
-	// TODO clean up the selection file shenanigans
 
 	private editorMenuEvent: EventRef;
 	private fileMenuEvent: EventRef;
@@ -66,7 +65,7 @@ export default class ClearTodosPlugin extends Plugin {
 		this.editorMenuEvent = this.app.workspace.on("editor-menu", (menu) => {
 			const view = this.app.workspace.getActiveViewOfType(MarkdownView);
 			if (!view) {
-				console.error("Clear Todos: No active MarkdownView found");
+				console.error("Clear Todos: No active MarkdownView found"); //todo change to new extension name?
 				return;
 			}
 			menu.addItem((item) =>
@@ -102,7 +101,7 @@ export default class ClearTodosPlugin extends Plugin {
 						.setTitle(TODO_TEXTS.clearFile)
 						.setIcon(CLEAR_TODO_ICON)
 						.onClick(() =>
-							this.clearTodosForFile(
+							this.modifyTodosForFile(
 								file,
 								ModificationAction.Clear,
 							),
@@ -113,7 +112,7 @@ export default class ClearTodosPlugin extends Plugin {
 						.setTitle(TODO_TEXTS.move)
 						.setIcon(CLEAR_TODO_ICON)
 						.onClick(() =>
-							this.clearTodosForFile(
+							this.modifyTodosForFile(
 								file,
 								ModificationAction.Move,
 							),
@@ -130,7 +129,8 @@ export default class ClearTodosPlugin extends Plugin {
 		this.app.workspace.offref(this.fileMenuEvent);
 	}
 
-	private async clearTodosForFile(
+	// used when the modification is requested onto a file from the vault level
+	private async modifyTodosForFile(
 		file: TAbstractFile,
 		action: ModificationAction,
 	) {
@@ -139,6 +139,7 @@ export default class ClearTodosPlugin extends Plugin {
 		await file.vault.modify(file, this.actionHandlers[action](fileContent));
 	}
 
+	// used when the modification is requested from within a file and thus could be related to the user selection
 	private modifyTodosInSelectionAndFallBackToFile(
 		view: MarkdownView,
 		action: ModificationAction,

@@ -9,5 +9,5 @@ Adds 2 commands to perform on the current selection or the entire document if th
 - Move all completed todos to the bottom
 
 Supports the following types of todos:
-- completed - [x]
-- scrapped - [-]
+- completed `- [x]`
+- scrapped `- [-]`

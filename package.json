@@ -1,5 +1,5 @@
 {
-	"name": "move-todos",
+	"name": "todo-organizer",
 	"version": "0.0.1",
 	"description": "Fork of clear-todos by Joshua Gawenda, instead of clearing it can also move todos to the bottom.",
 	"main": "main.js",

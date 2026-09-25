@@ -1,6 +1,6 @@
 {
-	"id": "move-todos",
-	"name": "Move Todos",
+	"id": "todo-organizer",
+	"name": "Todo Organizer",
 	"version": "0.0.1",
 	"minAppVersion": "0.15.0",
 	"description": "Fork of clear-todos by Joshua Gawenda, instead of clearing it can also move todos to the bottom.",
